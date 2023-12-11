@@ -1,0 +1,52 @@
+
+To install the required libraries for python library management system, you can use pip installer
+
+To install tkinter:-pip install tkinter
+To install mysql connector:-pip install mysql-connector-python
+
+
+Database Creation:-
+In the library management project we will use MySQL database create the database using following commands:
+
+create database db;
+ 
+use db;
+ 
+create table books(bid varchar(10) primary key,
+  title varchar(50) Not null,
+  author varchar(50) Not null,
+  available varchar(5) Default ‘YES’,  
+  );
+ 
+create table issue(bid varchar(10) primary key,
+ studentName varchar(50) Not null,
+ foreign key(bid) references books(bid)
+ );
+ 
+desc books;
+desc issue;
+
+
+We have created two tables for library management project:
+
+1. Books:
+
+Bid:- Book id, primary key
+Title:- Book title
+Author:= Book’s Author
+Available:= Determines book availability
+
+2. Issue:
+
+Bid:- Book id, foreign+ primary key
+studentName: Student’s name
+
+
+Functionalities and the file names:
+
+add.py: to add Books
+delete.py: to delete Books
+View.py: to view Books along with their availability status
+Issue.py: to issue Books
+Return.py: to return Books
+Home.py: Home page displaying all the functionalities.
